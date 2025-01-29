@@ -9,6 +9,9 @@ const About = () => {
           <div className=" flex items-center justify-center">
             <img className="rounded-2xl" src={aboutImg} alt="about" />
           </div>
+          <div className="w-full lg:w-1/2">
+            <div className="flex justify-center lg:justify-start"></div>
+          </div>
         </div>
       </div>
     </div>
