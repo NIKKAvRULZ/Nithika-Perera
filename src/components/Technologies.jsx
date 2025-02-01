@@ -1,4 +1,10 @@
 import { Ri24HoursFill, Ri24HoursLine, RiReactjsFill, RiReactjsLine } from "react-icons/ri"
+import { SiMongodb } from "react-icons/si"
+import { DiNodejs } from "react-icons/di"
+import { FaJava } from "react-icons/fa"
+impo
+
+
 
 const Technologies = () => {
   return (
@@ -9,16 +15,13 @@ const Technologies = () => {
                 <RiReactjsLine className="text-7xl text-cyan-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <RiReactjsLine className="text-7xl text-cyan-400"/>
+                <SiMongodb className="text-7xl text-cyan-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <RiReactjsLine className="text-7xl text-cyan-400"/>
+                <DiNodejs className="text-7xl text-cyan-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <RiReactjsLine className="text-7xl text-cyan-400"/>
-            </div>
-            <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <RiReactjsLine className="text-7xl text-cyan-400"/>
+                <FaJava className="text-7xl text-cyan-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
                 <RiReactjsLine className="text-7xl text-cyan-400"/>
