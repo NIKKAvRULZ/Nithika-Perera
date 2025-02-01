@@ -2,7 +2,7 @@ import { Ri24HoursFill, Ri24HoursLine, RiReactjsFill, RiReactjsLine } from "reac
 import { SiMongodb } from "react-icons/si"
 import { DiNodejs } from "react-icons/di"
 import { FaJava } from "react-icons/fa"
-impo
+import { IoLogoJavascript } from "react-icons/io5"
 
 
 
