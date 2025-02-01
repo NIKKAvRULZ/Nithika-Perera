@@ -17,22 +17,23 @@ const Technologies = () => {
                 <RiReactjsLine className="text-7xl text-cyan-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <SiMongodb className="text-7xl text-cyan-400"/>
+                <SiMongodb className="text-7xl text-green-500"/>
+            </div>
+            
+            <div className="rounded-2xl border-4 border-neutral-800 p-4">
+                <FaJava className="text-7xl text-red-500"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <DiNodejs className="text-7xl text-cyan-400"/>
-            </div>
-            <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <FaJava className="text-7xl text-cyan-400"/>
-            </div>
-            <div className="rounded-2xl border-4 border-neutral-800 p-4">
-                <DiJavascript1 className="text-7xl text-cyan-400"/>
+                <DiJavascript1 className="text-7xl text-yellow-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
                 <DiPython className="text-7xl text-cyan-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
                 <FaHtml5 className="text-7xl text-cyan-400"/>
+            </div>
+            <div className="rounded-2xl border-4 border-neutral-800 p-4">
+                <DiNodejs className="text-7xl text-green-400"/>
             </div>
         </div>
     </div>
