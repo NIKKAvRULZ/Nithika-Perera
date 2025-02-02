@@ -18,6 +18,7 @@ const App = () => {
         <About/>
         <Technologies/>
         <Experience/>
+        
       </div>
     </div>
   )
