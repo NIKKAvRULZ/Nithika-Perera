@@ -3,9 +3,9 @@ import project2 from "../assets/projects/project-2.jpg";
 import project3 from "../assets/projects/project-3.jpg";
 import project4 from "../assets/projects/project-4.jpg";
 
-export const HERO_CONTENT = `I am a passionate full stack developer with a knack for crafting robust and scalable web applications. With 5 years of hands-on experience, I have honed my skills in front-end technologies like React and Next.js, as well as back-end technologies like Node.js, MySQL, PostgreSQL, and MongoDB. My goal is to leverage my expertise to create innovative solutions that drive business growth and deliver exceptional user experiences.`;
+export const HERO_CONTENT = `"Hi, I'm Nithika Perera" Aspiring Software Engineer | Project Leader | Tech Enthusiast I’m a third-year Software Engineering student at SLIIT with a passion for creating innovative, user-centric software solutions. With experience leading projects like Online Hospital Management Systems, Gem Management Systems, and Mobile Apps, I specialize in full-stack development (MERN, Java, Kotlin) and UI/UX design using Figma. Driven by a love for technology and continuous learning, I aim to build efficient, impactful digital experiences that solve real-world problems.`;
 
-export const ABOUT_TEXT = `I am a dedicated and versatile full stack developer with a passion for creating efficient and user-friendly web applications. With 5 years of professional experience, I have worked with a variety of technologies, including React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development began with a deep curiosity for how things work, and it has evolved into a career where I continuously strive to learn and adapt to new challenges. I thrive in collaborative environments and enjoy solving complex problems to deliver high-quality solutions. Outside of coding, I enjoy staying active, exploring new technologies, and contributing to open-source projects.`;
+export const ABOUT_TEXT = `I'm Nithika Perera, a passionate and driven third-year student at SLIIT, specializing in Software Engineering. My academic journey is complemented by hands-on experience in developing innovative projects, from online management systems to mobile applications. As a project leader, I’ve demonstrated strong skills in HTML, CSS, JavaScript, Java, SQL, Kotlin, and the MERN stack, with a keen eye for UI/UX design using Figma. Beyond academics, my leadership and teamwork abilities were shaped through my involvement in SLIIT’s ERIC and IEEE societies, as well as my commitment to extracurricular activities like the National Cadet Corps. My goal is to apply my technical expertise, creativity, and problem-solving skills to real-world challenges, continually learning and growing in the dynamic field of technology.`;
 
 export const EXPERIENCES = [
   {
@@ -40,37 +40,37 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "E-Commerce Website",
+    title: "Gem Management System",
     image: project1,
     description:
-      "A fully functional e-commerce website with features like product listing, shopping cart, and user authentication.",
-    technologies: ["HTML", "CSS", "React", "Node.js", "MongoDB"],
+      "I led the development of the Gem Cutting System within the Gem Management System as the project team leader. Utilizing my expertise in the MERN stack and Figma for UI/UX design, I oversaw the creation of a user-friendly and efficient system. My role involved managing the development team, ensuring the smooth integration of features, and delivering a high-quality platform.",
+    technologies: ["MongoDB ", "Express.js", "React.js", "Node.js", "Figma"],
   },
   {
-    title: "Task Management App",
+    title: "Online Fashion Store Management system",
     image: project2,
     description:
-      "An application for managing tasks and projects, with features such as task creation, assignment, and progress tracking.",
-    technologies: ["HTML", "CSS", "Angular", "Firebase"],
+      "As the project team leader, I led the development of an Online Fashion Store Management System. My responsibilities included overseeing the design and implementation of the Home Site and Login page, ensuring a seamless user experience. This project involved coordinating with a team of developers, managing timelines, and integrating essential features to create a functional and user-friendly platform",
+    technologies: ["HTML", "CSS", "PHP", "JavaScript"],
   },
   {
     title: "Portfolio Website",
     image: project3,
     description:
-      "A personal portfolio website showcasing projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React", "Bootstrap"],
-  },
+      "A personal portfolio website showcasing My projects, skills, and contact information.",
+    technologies: ["HTML", "CSS", "React.js", "Express.js", "tailwindcss"],
+    },
   {
     title: "Blogging Platform",
     image: project4,
     description:
       "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "Vue.js", "Express", "mySQL"],
+    technologies: ["HTML", "CSS", "React.js", "Express.js", "tailwindcss"],
   },
 ];
 
 export const CONTACT = {
-  address: "767 Fifth Avenue, New York, NY 10153 ",
-  phoneNo: "+12 4555 666 00 ",
-  email: "me@example.com",
+  address: "89/1/i Wanaguru Mawatha Namal Sewana Hokandara ",
+  phoneNo: "+94 76 039 4961",
+  email: "nithika151@gmail.com",
 };
