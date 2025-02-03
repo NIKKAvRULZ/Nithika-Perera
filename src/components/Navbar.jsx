@@ -1,7 +1,6 @@
 import logo2 from '../assets/2.png'
 import { FaLinkedin } from 'react-icons/fa'
 import { FaGithub } from 'react-icons/fa'
-import { FaTwitterSquare } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaFacebook } from 'react-icons/fa'
 const Navbar = () => {
@@ -16,10 +15,6 @@ const Navbar = () => {
           </a>
           <a href="https://github.com/NIKKAvRULZ" target="_blank" rel="noopener noreferrer">
               <FaGithub className=" hover:text-gray-500"/>
-          </a>
-
-          <a href="https://twitter.com/NithikaPerera" target="_blank" rel="noopener noreferrer">
-              <FaTwitterSquare className=" hover:text-blue-400"/>
           </a>
           <a href="https://www.instagram.com/nikka_rulz/" target="_blank" rel="noopener noreferrer">
               <FaInstagram className=" hover:text-red-500"/>
