@@ -6,8 +6,6 @@ import { DiJavascript1 } from "react-icons/di";
 import { DiPython } from "react-icons/di";
 import { FaHtml5 } from "react-icons/fa";
 
-
-
 const Technologies = () => {
   return (
     <div className="border-b border-neutral-800 pb-24">
@@ -19,7 +17,6 @@ const Technologies = () => {
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
                 <SiMongodb className="text-7xl text-green-500"/>
             </div>
-            
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
                 <FaJava className="text-7xl text-red-500"/>
             </div>
