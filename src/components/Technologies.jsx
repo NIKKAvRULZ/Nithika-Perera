@@ -5,9 +5,9 @@ import { FaJava } from "react-icons/fa"
 import { DiJavascript1 } from "react-icons/di";
 import { DiPython } from "react-icons/di";
 import { FaHtml5 } from "react-icons/fa";
-
 const Technologies = () => {
   return (
+    
     <div className="border-b border-neutral-800 pb-24">
         <h2 className="my-20 text-center text-4xl">Technologies</h2>
         <div className="flex flex-wrap items-center justify-center gap-4">
