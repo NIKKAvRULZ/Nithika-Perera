@@ -1,10 +1,13 @@
-import { Ri24HoursFill, Ri24HoursLine, RiReactjsFill, RiReactjsLine } from "react-icons/ri"
+import { RiReactjsLine } from "react-icons/ri"
 import { SiMongodb } from "react-icons/si"
 import { DiNodejs } from "react-icons/di"
 import { FaJava } from "react-icons/fa"
 import { DiJavascript1 } from "react-icons/di";
 import { DiPython } from "react-icons/di";
 import { FaHtml5 } from "react-icons/fa";
+import { AiOutlineDotNet } from "react-icons/ai";
+import { TbBrandCSharp } from "react-icons/tb";
+import { SiCplusplus } from "react-icons/si";
 const Technologies = () => {
   return (
     <div className="border-b border-neutral-800 pb-24">
@@ -23,6 +26,12 @@ const Technologies = () => {
                 <DiJavascript1 className="text-7xl text-yellow-400"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
+                <SiCplusplus  className="text-7xl text-blue-800"/>
+            </div>
+            <div className="rounded-2xl border-4 border-neutral-800 p-4">
+                <TbBrandCSharp  className="text-7xl text-purple-400"/>
+            </div>
+            <div className="rounded-2xl border-4 border-neutral-800 p-4">
                 <DiPython className="text-7xl text-blue-500"/>
             </div>
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
@@ -31,6 +40,10 @@ const Technologies = () => {
             <div className="rounded-2xl border-4 border-neutral-800 p-4">
                 <DiNodejs className="text-7xl text-green-400"/>
             </div>
+            <div className="rounded-2xl border-4 border-neutral-800 p-4">
+                <AiOutlineDotNet className="text-7xl text-purple-600"/>
+            </div>
+            
         </div>
     </div>
   )
