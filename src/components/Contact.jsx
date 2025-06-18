@@ -5,6 +5,7 @@ import { HiMail, HiPhone, HiLocationMarker } from 'react-icons/hi';
 const Contact = () => {
   return (
     <motion.section 
+      id='connect'
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

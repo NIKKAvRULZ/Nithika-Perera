@@ -4,16 +4,18 @@ import { FaGithub } from 'react-icons/fa'
 import { FaInstagram } from 'react-icons/fa'
 import { FaFacebook } from 'react-icons/fa'
 import { motion } from 'framer-motion';
+import { BsWhatsapp } from 'react-icons/bs'
 
 const Navbar = () => {
   const socialLinks = [
     { Icon: FaLinkedin, href: "https://www.linkedin.com/in/nithika-perera-519197254", hoverColor: "hover:text-blue-500" },
     { Icon: FaGithub, href: "https://github.com/NIKKAvRULZ", hoverColor: "hover:text-neutral-400" },
     { Icon: FaInstagram, href: "https://www.instagram.com/nikka_rulz/", hoverColor: "hover:text-pink-500" },
-    { Icon: FaFacebook, href: "https://www.facebook.com/nithika.perera.9/", hoverColor: "hover:text-blue-600" }
+    { Icon: FaFacebook, href: "https://www.facebook.com/nithika.perera.9/", hoverColor: "hover:text-blue-600" },
+    { Icon: BsWhatsapp, href: "https://wa.me/94760394961", hoverColor: "hover:text-green-500" }
   ];
 
-  return (
+  return (  
     <motion.nav 
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}

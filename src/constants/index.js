@@ -1,7 +1,9 @@
-import project1 from "../assets/projects/project-1.jpg";
-import project2 from "../assets/projects/project-2.jpg";
-import project3 from "../assets/projects/project-3.jpg";
-import project4 from "../assets/projects/project-4.jpg";
+import project1 from "../assets/projects/CeylonGemGallery.png";
+import project2 from "../assets/projects/OnlineHospitalManagementSystem.png";
+import project3 from "../assets/projects/OnlineFashionStoreManagementSystem.png";
+import project4 from "../assets/projects/GlobeTrekker.png";
+import project5 from "../assets/projects/DineSwift.png";
+import project6 from "../assets/projects/BotaniX.png";
 
 export const HERO_CONTENT = `Aspiring Software Engineer | Project Leader | Tech Enthusiast I’m a third-year Software Engineering student at SLIIT with a passion for creating innovative, user-centric software solutions. With experience leading projects like Online Hospital Management Systems, Gem Management Systems, and Mobile Apps, I specialize in full-stack development (MERN, Java, Kotlin) and UI/UX design using Figma. Driven by a love for technology and continuous learning, I aim to build efficient, impactful digital experiences that solve real-world problems.`;
 
@@ -47,25 +49,40 @@ export const PROJECTS = [
     technologies: ["MongoDB ", "Express.js", "React.js", "Node.js", "Figma"],
   },
   {
-    title: "Online Fashion Store Management system",
+    title: "Online Hospital Management System",
     image: project2,
+    description:
+      "As the project team leader, I was responsible for the design and development of the Home Site, Login page, and User Profile (Doctor) sections in the Online Hospital Management System. I applied my skills in HTML, CSS, JavaScript, Java, and SQL to build an efficient and user-friendly platform. My role also involved managing the team, ensuring timely delivery, and integrating all key functionalities seamlessl",
+    technologies: ["HTML","Java", "CSS", "PHP", "JavaScript","SQL"],
+  },
+  {
+    title: "Online Fashion Store Management system",
+    image: project3,
     description:
       "As the project team leader, I led the development of an Online Fashion Store Management System. My responsibilities included overseeing the design and implementation of the Home Site and Login page, ensuring a seamless user experience. This project involved coordinating with a team of developers, managing timelines, and integrating essential features to create a functional and user-friendly platform",
     technologies: ["HTML", "CSS", "PHP", "JavaScript"],
-  },
-  {
-    title: "Portfolio Website",
-    image: project3,
-    description:
-      "A personal portfolio website showcasing My projects, skills, and contact information.",
-    technologies: ["HTML", "CSS", "React.js", "Express.js", "tailwindcss"],
     },
   {
-    title: "Blogging Platform",
+    title: "GlobeTrekker — Explore the World Like Never Before",
     image: project4,
     description:
-      "A platform for creating and publishing blog posts, with features like rich text editing, commenting, and user profiles.",
-    technologies: ["HTML", "CSS", "React.js", "Express.js", "tailwindcss"],
+      "I built GlobeTrekker, a full-stack web application that redefines global exploration through an interactive 3D globe powered by react-globe.gl and real-time country data. The app enables users to dynamically search and filter countries by name, capital, region, or language, visualize global insights using Nivo Charts, and securely save favorite locations through JWT-based authentication with Express.js and MongoDB. The UI is fully responsive and animated using React 18, Vite, Tailwind CSS v4.1, Framer Motion, and GSAP, delivering a seamless and visually engaging user experience.",
+    technologies: ["React 18", "Vite", "Tailwind CSS v4.1", "Node.js", "Express.js", "MongoDB", "JWT", "Framer Motion", "GSAP", "Nivo Charts", "Axios"],
+
+  },
+  {
+    title: "DineSwift — Cloud-Native Food Ordering & Delivery Platform",
+    image: project5,
+    description:
+      "I led the development of DineSwift, a cloud-native food ordering and delivery system architected with microservices, inspired by platforms like UberEats and PickMe Food. As the Project Lead, I was responsible for designing and implementing key backend services such as the User Service and Order Service using Node.js, Express, and MongoDB, and I developed the entire frontend using React.js, styled with Tailwind CSS v4.1 and enhanced with Framer Motion for a modern, interactive UI/UX. I also handled the integration of services using Kafka for asynchronous messaging and ensured robust deployment through Docker and Kubernetes. The platform features real-time order tracking, AI-based driver assignment, multi-gateway secure payments (PayHere, Dialog Genie, Stripe), and instant email/SMS notifications via a dedicated NotificationService. DineSwift exemplifies a full DevOps pipeline with scalable, containerized services and efficient service orchestration. My contributions reflect a strong command of full-stack development and cloud-native software engineering.",
+    technologies: ["React 18", "Vite", "Tailwind CSS v4.1", "Node.js", "Express.js", "MongoDB", "JWT", "Framer Motion", "Docker", "Kafka", "Axios"],
+  },
+  {
+    title: "Greenhouse Monitoring and Control System — Modular IoT Control with OSGi Framework",
+    image: project6,
+    description:
+      "As part of an advanced software engineering project, I led the development of a real-time greenhouse monitoring and control system utilizing the OSGi framework for modular, dynamic service management. This system automates the maintenance of optimal environmental conditions—temperature, humidity, soil moisture, and UV light levels—to support smart greenhouse farming. I architected the solution using Java 8, Apache Felix, and Maven, creating a flexible plug-and-play structure for device modules. My responsibilities included implementing sensor data producers and consumers for all environmental parameters, designing threshold-based control logic to automate irrigation, heating, lighting, and humidification, and developing a main controller interface for device management, sensor customization, and user interaction. The modular design allows scalable and maintainable expansion of devices and features real-time sensor data acquisition, dynamic threshold adjustments, and full control over connected devices—add, remove, toggle, and disable—making it a robust and extensible IoT control system.",
+    technologies: ["Java 8","Apache Felix (OSGi runtime)","Maven (modular build management)","Custom OSGi services for dynamic device interaction"],
   },
 ];
 
