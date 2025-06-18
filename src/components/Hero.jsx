@@ -1,7 +1,8 @@
 import { motion } from 'framer-motion';
 import { HiArrowDown, HiCode, HiDownload } from 'react-icons/hi';
 import { HERO_CONTENT } from '../constants';
-import profilePic from '../assets/NithikaPereaProfile.png';
+import profilePic from '../assets/Nithika.png';
+
 import resumePDF from '../assets/resume/NithikaPereraResume.pdf';
 
 const ScrollButton = ({ href, children, variant = "primary" }) => (
