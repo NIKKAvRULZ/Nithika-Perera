@@ -22,11 +22,13 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Gem Management System",
+    title: "Ceylon Gem Gallery — Precision Management for the Gem Industry ",
     image: project1,
     description:
       "I led the development of the Gem Cutting System within the Gem Management System as the project team leader. Utilizing my expertise in the MERN stack and Figma for UI/UX design, I oversaw the creation of a user-friendly and efficient system. My role involved managing the development team, ensuring the smooth integration of features, and delivering a high-quality platform.",
     technologies: ["MongoDB ", "Express.js", "React.js", "Node.js", "Figma"],
+    github: "hhttps://github.com/NIKKAvRULZ/Ceylon-Gem-Gallery.git",
+    demo: ""
   },
   {
     title: "Online Hospital Management System",
@@ -34,6 +36,8 @@ export const PROJECTS = [
     description:
       "As the project team leader, I was responsible for the design and development of the Home Site, Login page, and User Profile (Doctor) sections in the Online Hospital Management System. I applied my skills in HTML, CSS, JavaScript, Java, and SQL to build an efficient and user-friendly platform. My role also involved managing the team, ensuring timely delivery, and integrating all key functionalities seamlessl",
     technologies: ["HTML","Java", "CSS", "PHP", "JavaScript","SQL"],
+    github: "https://github.com/yourusername/hospital-management",
+    demo: ""
   },
   {
     title: "Online Fashion Store Management system",
@@ -41,6 +45,8 @@ export const PROJECTS = [
     description:
       "As the project team leader, I led the development of an Online Fashion Store Management System. My responsibilities included overseeing the design and implementation of the Home Site and Login page, ensuring a seamless user experience. This project involved coordinating with a team of developers, managing timelines, and integrating essential features to create a functional and user-friendly platform",
     technologies: ["HTML", "CSS", "PHP", "JavaScript"],
+    github: "https://github.com/NIKKAvRULZ/Online-Fashion-Store-Management-System.git",
+    demo: ""
     },
   {
     title: "GlobeTrekker — Explore the World Like Never Before",
@@ -48,7 +54,8 @@ export const PROJECTS = [
     description:
       "I built GlobeTrekker, a full-stack web application that redefines global exploration through an interactive 3D globe powered by react-globe.gl and real-time country data. The app enables users to dynamically search and filter countries by name, capital, region, or language, visualize global insights using Nivo Charts, and securely save favorite locations through JWT-based authentication with Express.js and MongoDB. The UI is fully responsive and animated using React 18, Vite, Tailwind CSS v4.1, Framer Motion, and GSAP, delivering a seamless and visually engaging user experience.",
     technologies: ["React 18", "Vite", "Tailwind CSS v4.1", "Node.js", "Express.js", "MongoDB", "JWT", "Framer Motion", "GSAP", "Nivo Charts", "Axios"],
-
+    github: "https://github.com/NIKKAvRULZ/GlobeTrekker.git",
+    demo: "https://globe-trekker-gamma.vercel.app/"
   },
   {
     title: "DineSwift — Cloud-Native Food Ordering & Delivery Platform",
@@ -56,6 +63,8 @@ export const PROJECTS = [
     description:
       "I led the development of DineSwift, a cloud-native food ordering and delivery system architected with microservices, inspired by platforms like UberEats and PickMe Food. As the Project Lead, I was responsible for designing and implementing key backend services such as the User Service and Order Service using Node.js, Express, and MongoDB, and I developed the entire frontend using React.js, styled with Tailwind CSS v4.1 and enhanced with Framer Motion for a modern, interactive UI/UX. I also handled the integration of services using Kafka for asynchronous messaging and ensured robust deployment through Docker and Kubernetes. The platform features real-time order tracking, AI-based driver assignment, multi-gateway secure payments (PayHere, Dialog Genie, Stripe), and instant email/SMS notifications via a dedicated NotificationService. DineSwift exemplifies a full DevOps pipeline with scalable, containerized services and efficient service orchestration. My contributions reflect a strong command of full-stack development and cloud-native software engineering.",
     technologies: ["React 18", "Vite", "Tailwind CSS v4.1", "Node.js", "Express.js", "MongoDB", "JWT", "Framer Motion", "Docker", "Kafka", "Axios"],
+    github: "https://github.com/NIKKAvRULZ/DineSwift.git",
+    demo: ""
   },
   {
     title: "Greenhouse Monitoring and Control System — Modular IoT Control with OSGi Framework",
@@ -63,6 +72,8 @@ export const PROJECTS = [
     description:
       "As part of an advanced software engineering project, I led the development of a real-time greenhouse monitoring and control system utilizing the OSGi framework for modular, dynamic service management. This system automates the maintenance of optimal environmental conditions—temperature, humidity, soil moisture, and UV light levels—to support smart greenhouse farming. I architected the solution using Java 8, Apache Felix, and Maven, creating a flexible plug-and-play structure for device modules. My responsibilities included implementing sensor data producers and consumers for all environmental parameters, designing threshold-based control logic to automate irrigation, heating, lighting, and humidification, and developing a main controller interface for device management, sensor customization, and user interaction. The modular design allows scalable and maintainable expansion of devices and features real-time sensor data acquisition, dynamic threshold adjustments, and full control over connected devices—add, remove, toggle, and disable—making it a robust and extensible IoT control system.",
     technologies: ["Java 8","Apache Felix (OSGi runtime)","Maven (modular build management)","Custom OSGi services for dynamic device interaction"],
+    github: "https://github.com/NIKKAvRULZ/Green-House-v2.0.git",
+    demo: ""
   },
 ];
 

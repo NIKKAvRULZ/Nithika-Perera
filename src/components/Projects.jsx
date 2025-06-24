@@ -1,68 +1,174 @@
-import { motion } from 'framer-motion';
-import { PROJECTS } from "../constants";
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
+import { FiGithub, FiExternalLink } from 'react-icons/fi';
+import { PROJECTS } from '../constants';
+
+const ProjectCard = ({ project, index }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const springTransition = {
+    type: "spring",
+    stiffness: 100,
+    damping: 15
+  };
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true }}
+      className="group relative overflow-visible rounded-2xl bg-neutral-900/20 backdrop-blur-sm"
+      onHoverStart={() => setIsExpanded(true)}
+      onHoverEnd={() => setIsExpanded(false)}
+    >
+      {/* Content Container */}
+      <motion.div
+        whileHover={{ 
+          scale: 1.02,
+          transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+        }}
+        className="relative z-10"
+      >
+        {/* Project Image */}
+        <div className="aspect-video w-full overflow-hidden rounded-t-2xl">
+          <img 
+            src={project.image} 
+            alt={project.title}
+            className="w-full h-full object-cover object-center transform 
+                     transition-transform duration-700 ease-out group-hover:scale-105"
+          />
+        </div>
+
+        {/* Project Content */}
+        <div className="relative p-6">
+          {/* Description Section */}
+          <AnimatePresence>
+            <motion.div
+              className="relative mb-6 overflow-hidden"
+              initial={{ height: "4.5rem" }}
+              animate={{ 
+                height: isExpanded ? "auto" : "4.5rem",
+                transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+              }}
+            >
+              <p className={`text-sm leading-relaxed text-neutral-400/90 
+                          ${!isExpanded ? 'line-clamp-3' : ''}`}>
+                {project.description}
+              </p>
+              
+              <motion.div 
+                className="absolute bottom-0 left-0 w-full h-8  pointer-events-none"
+                animate={{ opacity: isExpanded ? 0 : 1 }}
+                transition={{ duration: 0.4 }}
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Technologies */}
+          <div className="flex flex-wrap gap-2 mt-4">
+            {project.technologies.map((tech, idx) => (
+              <motion.span 
+                key={idx}
+                className="rounded-full bg-neutral-800/50 px-3 py-1 text-xs 
+                         text-emerald-400/80 border border-emerald-500/10"
+                whileHover={{ y: -2 }}
+                transition={springTransition}
+              >
+                {tech}
+              </motion.span>
+            ))}
+          </div>
+
+          {/* Links Section */}
+          <div className="mt-6 flex gap-6">
+            {project.github && (
+              <motion.a 
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-emerald-400 
+                         hover:text-emerald-300 cursor-pointer"
+                whileHover={{ x: 4 }}
+                transition={springTransition}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(project.github, '_blank', 'noopener,noreferrer');
+                }}
+              >
+                <FiGithub className="text-lg" />
+                <span>Source Code</span>
+              </motion.a>
+            )}
+            {project.demo && (
+              <motion.a 
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm text-emerald-400 
+                         hover:text-emerald-300 cursor-pointer"
+                whileHover={{ x: 4 }}
+                transition={springTransition}
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.open(project.demo, '_blank', 'noopener,noreferrer');
+                }}
+              >
+                <FiExternalLink className="text-lg" />
+                <span>Live Demo</span>
+              </motion.a>
+            )}
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Decorative Elements */}
+      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
+      <motion.div 
+        className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r 
+                 from-emerald-500/0 via-emerald-500/20 to-emerald-500/0"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1 }}
+      />
+    </motion.div>
+  );
+};
 
 const Projects = () => {
   return (
-    <motion.section 
-      id="projects"
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      className="py-24"
-    >
-      <motion.h2 
-        initial={{ y: -20 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 0.6 }}
-        className="mb-16 text-center text-3xl font-light tracking-tight text-neutral-200"
-      >
-        Featured Projects
-      </motion.h2>
-
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {PROJECTS.map((project, index) => (
-          <motion.article 
-            key={index}
-            initial={{ y: 20, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative overflow-hidden rounded-2xl bg-neutral-900/50 backdrop-blur-sm"
-          >
-            <div className="relative aspect-video overflow-hidden">
-              <img 
-                src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition duration-300 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-neutral-900/60 opacity-0 transition duration-300 group-hover:opacity-100" />
-            </div>
-
-            <div className="p-6">
-              <h3 className="mb-2 text-xl font-medium text-emerald-400">
-                {project.title}
-              </h3>
-              
-              <p className="mb-4 text-sm text-neutral-400 line-clamp-2">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, techIndex) => (
-                  <span 
-                    key={techIndex}
-                    className="inline-block rounded-full bg-neutral-800/50 px-2.5 py-0.5 text-xs text-emerald-400 border border-emerald-500/10"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="absolute bottom-0 left-0 h-1 w-full bg-gradient-to-r from-emerald-500/0 via-emerald-500/50 to-emerald-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          </motion.article>
-        ))}
+    <section className="relative py-32" id="projects">
+      {/* Background Gradients */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute left-1/4 top-1/4 h-96 w-96 rounded-full bg-emerald-500/5 blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 h-96 w-96 rounded-full bg-emerald-500/5 blur-3xl" />
       </div>
-    </motion.section>
+
+      <div className="container mx-auto px-6">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="mb-24 text-center"
+        >
+          <span className="mb-4 block text-sm font-light tracking-widest text-emerald-400/80">
+            MY WORK
+          </span>
+          <h2 className="text-4xl font-extralight tracking-wider">
+            <span className="text-neutral-300">Featured</span>
+            <span className="ml-3 text-emerald-400">Projects</span>
+          </h2>
+        </motion.div>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {PROJECTS.map((project, index) => (
+            <ProjectCard key={index} project={project} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -1,55 +1,122 @@
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+import { useState } from 'react';
 import { EXPERIENCES } from '../constants';
 import { HiCalendar, HiBriefcase, HiCode } from 'react-icons/hi';
 
-const TimelineCard = ({ experience, index }) => (
-  <motion.div 
-    initial={{ opacity: 0, y: 20 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    className={`relative md:w-1/2 ${index % 2 === 0 ? 'md:ml-auto md:pl-8' : 'md:mr-auto md:pr-8'}`}
-  >
-    {/* Timeline Dot */}
-    <div className="absolute -left-3 top-8 z-10 h-6 w-6 rounded-full border-4 border-neutral-950 bg-emerald-400 md:left-0 md:-ml-3" />
+const TimelineCard = ({ experience, index }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const springTransition = {
+    type: "spring",
+    stiffness: 100,
+    damping: 15
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      viewport={{ once: true }}
+      className={`relative md:w-1/2 ${index % 2 === 0 ? 'md:ml-auto md:pl-8' : 'md:mr-auto md:pr-8'}`}
+    >
+      {/* Timeline Dot with animation */}
+      <motion.div 
+        className="absolute -left-3 top-8 z-10 h-6 w-6 rounded-full border-4 border-neutral-950 bg-emerald-400 md:left-0 md:-ml-3"
+        whileHover={{ scale: 1.2 }}
+        transition={springTransition}
+      />
     
-    {/* Card Content */}
-    <div className="group relative overflow-hidden rounded-2xl bg-neutral-900/20 p-6 backdrop-blur-sm md:p-8">
-      {/* Year Badge */}
-      <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1">
-        <HiCalendar className="h-4 w-4 text-emerald-400" />
-        <span className="text-sm text-emerald-400">{experience.year}</span>
-      </div>
+      {/* Card Content */}
+      <motion.div 
+        className="group relative overflow-hidden rounded-2xl bg-neutral-900/20 p-6 backdrop-blur-sm md:p-8"
+        onHoverStart={() => setIsExpanded(true)}
+        onHoverEnd={() => setIsExpanded(false)}
+        whileHover={{ 
+          scale: 1.02,
+          transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
+        }}
+      >
+        {/* Year Badge with hover animation */}
+        <motion.div 
+          className="mb-4 inline-flex items-center gap-2 rounded-full bg-emerald-500/10 px-3 py-1"
+          whileHover={{ x: 4 }}
+          transition={springTransition}
+        >
+          <HiCalendar className="h-4 w-4 text-emerald-400" />
+          <span className="text-sm text-emerald-400">{experience.year}</span>
+        </motion.div>
 
-      {/* Role & Company */}
-      <div className="mb-4">
-        <h3 className="text-xl font-medium text-emerald-400">{experience.role}</h3>
-        <p className="mt-1 text-neutral-300/90">{experience.company}</p>
-      </div>
-
-      {/* Description */}
-      <p className="mb-6 text-sm leading-relaxed text-neutral-400/90">
-        {experience.description}
-      </p>
-
-      {/* Technologies */}
-      <div className="flex flex-wrap gap-2">
-        {experience.technologies.map((tech, idx) => (
-          <span 
-            key={idx}
-            className="rounded-full bg-neutral-800/50 px-3 py-1 text-xs text-emerald-400/80
-                     border border-emerald-500/10 backdrop-blur-sm"
+        {/* Role & Company with hover animation */}
+        <motion.div className="mb-4">
+          <motion.h3 
+            className="text-xl font-medium text-emerald-400"
+            whileHover={{ x: 4 }}
+            transition={springTransition}
           >
-            {tech}
-          </span>
-        ))}
-      </div>
+            {experience.role}
+          </motion.h3>
+          <motion.p 
+            className="mt-1 text-neutral-300/90"
+            whileHover={{ x: 4 }}
+            transition={springTransition}
+          >
+            {experience.company}
+          </motion.p>
+        </motion.div>
 
-      {/* Decorative Elements */}
-      <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
-      <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-emerald-500/0 via-emerald-500/20 to-emerald-500/0" />
-    </div>
-  </motion.div>
-);
+        {/* Description with AnimatePresence */}
+        <AnimatePresence>
+          <motion.div
+            className="relative mb-6 overflow-hidden"
+            initial={{ height: "4.5rem" }}
+            animate={{ 
+              height: isExpanded ? "auto" : "4.5rem",
+              transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] }
+            }}
+          >
+            <p className={`text-sm leading-relaxed text-neutral-400/90 
+                        ${!isExpanded ? 'line-clamp-3' : ''}`}>
+              {experience.description}
+            </p>
+            
+            <motion.div 
+              className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t 
+                        pointer-events-none"
+              animate={{ opacity: isExpanded ? 0 : 1 }}
+              transition={{ duration: 0.4 }}
+            />
+          </motion.div>
+        </AnimatePresence>
+
+        {/* Technologies with hover animation */}
+        <div className="flex flex-wrap gap-2 mt-6">
+          {experience.technologies.map((tech, idx) => (
+            <motion.span 
+              key={idx}
+              className="rounded-full bg-neutral-800/50 px-3 py-1 text-xs text-emerald-400/80
+                       border border-emerald-500/10 backdrop-blur-sm"
+              whileHover={{ y: -2 }}
+              transition={springTransition}
+            >
+              {tech}
+            </motion.span>
+          ))}
+        </div>
+
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-white/10" />
+        <motion.div 
+          className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r 
+                   from-emerald-500/0 via-emerald-500/20 to-emerald-500/0"
+          initial={{ scaleX: 0 }}
+          animate={{ scaleX: 1 }}
+          transition={{ duration: 1 }}
+        />
+      </motion.div>
+    </motion.div>
+  );
+};
 
 const Experience = () => {
   return (
