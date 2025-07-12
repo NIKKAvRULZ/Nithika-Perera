@@ -1,9 +1,10 @@
 import project1 from "../assets/projects/CeylonGemGallery.png";
-import project2 from "../assets/projects/OnlineHospitalManagementSystem.png";
+import project2 from "../assets/projects/CareSync.png";
 import project3 from "../assets/projects/OnlineFashionStoreManagementSystem.png";
 import project4 from "../assets/projects/GlobeTrekker.png";
 import project5 from "../assets/projects/DineSwift.png";
 import project6 from "../assets/projects/BotaniX.png";
+import project7 from "../assets/projects/Gemini 2.0 Flash Chatbot.png";
 
 export const HERO_CONTENT = `Aspiring Software Engineer | Project Leader | Tech Enthusiast I’m a third-year Software Engineering student at SLIIT with a passion for creating innovative, user-centric software solutions. With experience leading projects like Online Hospital Management Systems, Gem Management Systems, and Mobile Apps, I specialize in full-stack development (MERN, Java, Kotlin) and UI/UX design using Figma. Driven by a love for technology and continuous learning, I aim to build efficient, impactful digital experiences that solve real-world problems.`;
 
@@ -73,6 +74,15 @@ export const PROJECTS = [
       "As part of an advanced software engineering project, I led the development of a real-time greenhouse monitoring and control system utilizing the OSGi framework for modular, dynamic service management. This system automates the maintenance of optimal environmental conditions—temperature, humidity, soil moisture, and UV light levels—to support smart greenhouse farming. I architected the solution using Java 8, Apache Felix, and Maven, creating a flexible plug-and-play structure for device modules. My responsibilities included implementing sensor data producers and consumers for all environmental parameters, designing threshold-based control logic to automate irrigation, heating, lighting, and humidification, and developing a main controller interface for device management, sensor customization, and user interaction. The modular design allows scalable and maintainable expansion of devices and features real-time sensor data acquisition, dynamic threshold adjustments, and full control over connected devices—add, remove, toggle, and disable—making it a robust and extensible IoT control system.",
     technologies: ["Java 8","Apache Felix (OSGi runtime)","Maven (modular build management)","Custom OSGi services for dynamic device interaction"],
     github: "https://github.com/NIKKAvRULZ/Green-House-v2.0.git",
+    demo: ""
+  },
+  {
+    title: "Gemini 2.0 Flash Chatbot — Terminal-Based AI Interaction",
+    image: project7,
+    description:
+      "Developed a lightweight terminal-based chatbot powered by Google's Gemini 2.0 Flash model. The app uses the official google-generativeai Python SDK to establish a continuous conversational flow, allowing users to chat with the Gemini AI via the command line. The bot retains context during interactions, mimicking a human-like conversational experience.",
+    technologies: ["Python 3.7+ – Programming language","Google Generative AI (Gemini SDK) – AI model integration","Command-Line Interface (CLI) – Text-based user interaction"],
+    github: "https://github.com/NIKKAvRULZ/Gemini-ChatBot.git",
     demo: ""
   },
 ];
