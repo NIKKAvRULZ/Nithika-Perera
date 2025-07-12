@@ -12,6 +12,10 @@ const TimelineCard = ({ experience, index }) => {
     damping: 15
   };
 
+  const handleToggle = () => {
+    setIsExpanded(!isExpanded);
+  };
+
   return (
     <motion.div 
       initial={{ opacity: 0, y: 20 }}
@@ -29,9 +33,10 @@ const TimelineCard = ({ experience, index }) => {
     
       {/* Card Content */}
       <motion.div 
-        className="group relative overflow-hidden rounded-2xl bg-neutral-900/20 p-6 backdrop-blur-sm md:p-8"
-        onHoverStart={() => setIsExpanded(true)}
-        onHoverEnd={() => setIsExpanded(false)}
+        className="group relative overflow-hidden rounded-2xl bg-neutral-900/20 p-6 backdrop-blur-sm md:p-8 cursor-pointer"
+        onClick={handleToggle}
+        onHoverStart={() => !window.matchMedia('(max-width: 768px)').matches && setIsExpanded(true)}
+        onHoverEnd={() => !window.matchMedia('(max-width: 768px)').matches && setIsExpanded(false)}
         whileHover={{ 
           scale: 1.02,
           transition: { duration: 0.4, ease: [0.4, 0, 0.2, 1] }
@@ -81,13 +86,33 @@ const TimelineCard = ({ experience, index }) => {
             </p>
             
             <motion.div 
-              className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t 
+              className="absolute bottom-0 left-0 w-full h-8 bg-gradient-to-t from-neutral-900/20 to-transparent
                         pointer-events-none"
               animate={{ opacity: isExpanded ? 0 : 1 }}
               transition={{ duration: 0.4 }}
             />
           </motion.div>
         </AnimatePresence>
+
+        {/* Expand/Collapse Indicator for Mobile */}
+        <motion.div
+          className="md:hidden absolute bottom-4 right-4 text-emerald-400/60"
+          animate={{ rotate: isExpanded ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            className="h-5 w-5" 
+            viewBox="0 0 20 20" 
+            fill="currentColor"
+          >
+            <path 
+              fillRule="evenodd" 
+              d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" 
+              clipRule="evenodd" 
+            />
+          </svg>
+        </motion.div>
 
         {/* Technologies with hover animation */}
         <div className="flex flex-wrap gap-2 mt-6">

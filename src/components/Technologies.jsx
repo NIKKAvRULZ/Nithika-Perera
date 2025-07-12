@@ -2,7 +2,7 @@ import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 import { RiReactjsLine } from "react-icons/ri"
-import { SiMongodb } from "react-icons/si"
+import { SiAdobe, SiAdobeindesign, SiAdobepremierepro, SiMongodb } from "react-icons/si"
 import { DiNodejs } from "react-icons/di"
 import { FaJava } from "react-icons/fa"
 import { DiJavascript1 } from "react-icons/di";
@@ -12,6 +12,7 @@ import { AiOutlineDotNet } from "react-icons/ai";
 import { TbBrandCSharp } from "react-icons/tb";
 import { SiCplusplus } from "react-icons/si";
 import { SiUipath } from "react-icons/si";
+import { SiAdobephotoshop, SiAdobeaftereffects, SiCanva, SiFigma } from "react-icons/si";
 
 const TechCard = ({ Icon, color, name, index }) => {
   const controls = useAnimation();
@@ -81,7 +82,7 @@ const TechCard = ({ Icon, color, name, index }) => {
 };
 
 const Technologies = () => {
-  const technologies = [
+  const technicalTools = [
     { Icon: RiReactjsLine, color: "text-cyan-400", name: "React" },
     { Icon: SiMongodb, color: "text-green-500", name: "MongoDB" },
     { Icon: FaJava, color: "text-red-500", name: "Java" },
@@ -93,6 +94,15 @@ const Technologies = () => {
     { Icon: DiNodejs, color: "text-green-400", name: "Node.js" },
     { Icon: AiOutlineDotNet, color: "text-purple-600", name: ".NET" },
     { Icon: SiUipath, color: "text-orange-500", name: "UiPath RPA" }
+  ];
+
+  const creativeTools = [
+    { Icon: SiAdobephotoshop, color: "text-blue-600", name: "Photoshop" },
+    { Icon: SiAdobeaftereffects, color: "text-purple-500", name: "After Effects" },
+    { Icon: SiAdobepremierepro, color: "text-pink-500", name: "Premiere Pro" },
+    { Icon: SiAdobeindesign, color: "text-red-500", name: "Indesign" },
+    { Icon: SiCanva, color: "text-cyan-500", name: "Canva" },
+    { Icon: SiFigma, color: "text-pink-500", name: "Figma" }
   ];
 
   return (
@@ -115,32 +125,65 @@ const Technologies = () => {
         />
       </div>
 
-      <div className="container mx-auto px-6">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-24 text-center"
-        >
-          <motion.span 
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="mb-4 block text-sm font-light tracking-[0.2em] text-emerald-400/80"
+      <div className="container mx-auto px-6 space-y-32">
+        {/* Technical Tools Section */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-24 text-center"
           >
-            TECH STACK
-          </motion.span>
-          <h2 className="text-4xl font-extralight tracking-wider text-neutral-300">
-            Technologies & Tools
-          </h2>
-        </motion.div>
+            <motion.span 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-4 block text-sm font-light tracking-[0.2em] text-emerald-400/80"
+            >
+              TECH STACK
+            </motion.span>
+            <h2 className="text-4xl font-extralight tracking-wider text-neutral-300">
+              Development Tools
+            </h2>
+          </motion.div>
 
-        {/* Technologies Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {technologies.map((tech, index) => (
-            <TechCard key={tech.name} {...tech} index={index} />
-          ))}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+            {technicalTools.map((tech, index) => (
+              <TechCard key={tech.name} {...tech} index={index} />
+            ))}
+          </div>
+        </div>
+
+        {/* Creative Tools Section */}
+        <div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="mb-24 text-center"
+          >
+            <motion.span 
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}
+              className="mb-4 block text-sm font-light tracking-[0.2em] text-emerald-400/80"
+            >
+              CREATIVE TOOLS
+            </motion.span>
+            <h2 className="text-4xl font-extralight tracking-wider text-neutral-300">
+              Design & Media
+            </h2>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {creativeTools.map((tool, index) => (
+              <TechCard 
+                key={tool.name} 
+                {...tool} 
+                index={index}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </section>
